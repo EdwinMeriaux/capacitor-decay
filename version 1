@@ -1,0 +1,38 @@
+#so far everything except the initial voltage can be a variable
+
+import math
+import numpy
+
+print("the variable in this case make it equal to 0 went prompted for an input")
+
+listvar = []
+
+Vo = int(input("initial voltage reading "))
+V = int(input("final voltage reading "))
+Z = int(input("number of zeros for capacitor "))
+C = int(input("capacitor value (Farads) "))
+T = int(input("time "))
+R = int(input("resistance value "))
+
+listvar.append(Vo)
+listvar.append(V)
+listvar.append(C)
+listvar.append(T)
+listvar.append(R)
+
+print(listvar)
+
+for i in listvar:
+    print("entered")
+    if V == 0:
+        V = Vo*math.exp(-T/(R*C*(10**(-1*3))))
+        print(V)
+    elif C == 0:
+        C = (-1)*T/(R*numpy.log(V/Vo))
+        print(C)
+    elif R == 0:
+        R = (-1)*T/(C*(10**(-1*Z)*numpy.log(V/Vo)))
+        print(R)
+    elif T = 00:
+        T = (-1)*numpy.long(V/Vo)/(R*C)
+        print(T)
